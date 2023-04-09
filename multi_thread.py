@@ -5,6 +5,8 @@ from telethon.sync import TelegramClient
 
 # Замените значения на свои API_ID, API_HASH и токен бота
 session1='1BVtsOJcBu3HSGsLSmeQK-Ci78-bJ3ye4FELttDF5DpitkCBTKbORYKDEFiV7nzjzKAnNv6wWSPiD0K7eQbRJfTukljKXDcFEdIaEbbdW1pnNWgBgd-4X9wgcZ7dnFtqh5OchR1pPOWOq3buL0EbtfxGp0o30M1T8ZqGmUOOvGN5tEDSZTelUxDeTYXgBTwBpskFUoZzg-ALBjgZHB36238xeyKBSYxEJ_pMNpTa8me-zsJOp4nDQih6saAA4XVK5Vbtin6h38oWLUm-vcsNoPS5dTjj2tKz7OPNtoNTogVLT-Pc9Hj3Vftx8QX9VpblavTwPedL-TuttTBidYFW7Zp5fjOL-znE=' #OGqueen
+
+
 session2 = "1ApWapzMBu3d_6R-rPwedz48w3u5TQly52OUx536rBUP22ORDnVVGaCSL374OC1FeyyNZv9ozYD8xYghi1OzHuofVF_1z14sBcIBgVR2S79Ag-puv2eMGZiLenORjhlUGqsE0tchR3nui4mElbo-kyesecN7HOVdHDA816pPiCokMo97Jom9R5UYZj6FsBOM_ZEzJWWbUGis9EJ6Exj3-SKWcEOlJyAudL1xtKtE8dAEkRXRATJqthzoCUY6-VFcmqGOBZnrmEXuZjyVklKGP76qr04t7pe-y6GdgSkVStwB17cHnrgYjnek70GMTxybpIF-YxCsAsB6Ruw5B85x5BtU3MO_9DYE=" #SergoAFK930
 
 
@@ -22,23 +24,19 @@ clients = [TelegramClient(StringSession(x), api_id, api_hash) for x in (session1
 
 
 
-
-#async def get_session():
-#    string = client.session.save()
-#    print(string)
-
-
 async def whiskey(client): 
     text = '/whiskey@WhiskeyUseBot'
     #text = 'Ебать Ногинск'
-    chatid= 'https://t.me/+xSK71gkKO2hjMjIy' #братвп
+    chatid = 'https://t.me/+xSK71gkKO2hjMjIy' #братва
     #chatid = 'https://t.me/+7TbtH5r8k5w3NmFi' #test
     await client.start()
     await asyncio.sleep(5)
     print('Logged?')
     while True:              
-         await client.send_message(chatid, text)
+         msg = await client.send_message(chatid, text)
+         await client.delete_messages(chatid, msg)
          await asyncio.sleep(3661)
+        
 
                   
 async def tsks():
